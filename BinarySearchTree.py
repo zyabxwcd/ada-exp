@@ -65,11 +65,11 @@ while(choice):
     value = int(input('\nEnter element to search : '))
     
     if root.search(value):
-        print('Element found in {} iteration(s)'.format(root.counter))
-        root.counter = 0
+        print('Element found in {} iteration(s)'.format(Node.counter))
+        Node.counter = 0
     else:
         print('Element not found.')
-        root.counter = 0
+        Node.counter = 0
 
     choice = input('Search element ? (y/n) ')
     choice = True if choice == 'y' else False
