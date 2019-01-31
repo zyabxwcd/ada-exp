@@ -45,7 +45,7 @@ def partition(arr, left, right, pivot):
         while arr[right] > pivot:
             right -= 1
 
-        # Swap the unordered elements on LHS & RHS
+        # Swap the unordered elements in LHS & RHS
         if left <= right:
             arr[left], arr[right] = arr[right], arr[left]
             left += 1
