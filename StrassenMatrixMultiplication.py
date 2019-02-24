@@ -48,8 +48,6 @@ def split(matrix):  # split matrix into quarters
     return a, b, c, d
 
 # Normal matrix addition
-
-
 def add_m(a, b):
     if type(a) == int:
         d = a + b
@@ -63,8 +61,6 @@ def add_m(a, b):
     return d
 
 # Normal matrix subtraction
-
-
 def sub_m(a, b):
     if type(a) == int:
         d = a - b
@@ -111,9 +107,9 @@ def strassen_multiply(a, b, q):
         p7 = strassen_multiply(sub_m(a12, a22), add_m(b21, b22), q/2)
 
         '''
-       Resultant product matrix ‘c’ is composed of 4 sub matrices c11, c12, c21, 
-       c22.
-       '''
+        Resultant product matrix ‘c’ is composed of 4 sub matrices c11, c12, c21, 
+        c22.
+        '''
 
         # c11 = p1 + p4 - p5 + p7
         c11 = add_m(sub_m( add_m(p1, p4), p5), p7)
