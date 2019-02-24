@@ -33,10 +33,13 @@ def heap_sort(data):
     n = len(data)
 
     # Building a maxheap
-    for i in range(n, -1, -1):
+    # Loop works till 0 (-1-(-1)) because we need to visit the root node too  
+    for i in range(n//2, -1, -1):
         max_heapify(data, n, i)
-
+ 
     # Extracting elements one at a time
+    # Loop stops before root (thus 0) because apparently it represents the last 
+    # sorted element
     for i in range(n-1, 0, -1):
         data[i], data[0] = data[0], data[i]
         max_heapify(data, i, 0)
