@@ -1,3 +1,19 @@
+'''
+This program is taken from the following StackOverflow thread:
+https://stackoverflow.com/q/12867099
+
+I have simply added some helpful comments to make it easier to understand.
+Some minor changes have also been done but largely its the same.
+
+Output:
+Input Matrices:
+A: [[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4]]
+B: [[4, 4, 4, 4], [3, 3, 3, 3], [2, 2, 2, 2], [1, 1, 1, 1]]
+Matrix Product:
+[[10, 10, 10, 10], [20, 20, 20, 20], [30, 30, 30, 30], [40, 40, 40, 40]]
+'''
+
+
 a = [[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4]]
 b = [[4, 4, 4, 4], [3, 3, 3, 3], [2, 2, 2, 2], [1, 1, 1, 1]]
 
