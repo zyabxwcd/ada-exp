@@ -1,12 +1,22 @@
+'''
+A Python program for Prim's Minimum Spanning Tree (MST) algorithm.
+The program is for adjacency matrix representation of the graph
+Part of Cosmos by OpenGenus Foundation
 
-# A Python program for Prim's Minimum Spanning Tree (MST) algorithm.
-# The program is for adjacency matrix representation of the graph
-# Part of Cosmos by OpenGenus Foundation
+Output:
+Edge    Weight
+0 - 1    2
+1 - 2    3
+0 - 3    6
+1 - 4    5
+'''
+
 class Graph():
     def __init__(self, vertices):
         self.V = vertices
         self.graph = [[0 for column in range(vertices)] 
                       for row in range(vertices)]
+
     # Function to print the constructed MST stored in parent[]
     def printMST(self, parent):
         print ("Edge \tWeight")
@@ -14,16 +24,20 @@ class Graph():
             print (parent[i],"-",i,"\t",self.graph[i][ parent[i] ])
     # Function to find the vertex with minimum distance value, from
     # the set of vertices not yet included in shortest path tree
+
     def minKey(self, key, mstSet):
         # Initilaize min value
         min = 1000000
+        
         for v in range(self.V):
             if key[v] < min and mstSet[v] == False:
                 min = key[v]
                 min_index = v
+
         return min_index
     # Function to construct and print MST for a graph represented using
     # adjacency matrix representation
+
     def primMST(self):
         #Key values used to pick minimum weight edge in cut
         key = [1000000] * self.V
@@ -31,6 +45,7 @@ class Graph():
         key[0] = 0   # Make key 0 so that this vertex is picked as first vertex
         mstSet = [False] * self.V
         parent[0] = -1  # First node is always the root of
+
         for cout in range(self.V):
             # Pick the minimum distance vertex from the set of vertices not
             # yet processed. u is always equal to src in first iteration
@@ -47,7 +62,9 @@ class Graph():
                 if self.graph[u][v] > 0 and mstSet[v] == False and key[v] > self.graph[u][v]:
                         key[v] = self.graph[u][v]
                         parent[v] = u
+
         self.printMST(parent)
+
 g  = Graph(5)
 g.graph = [ [0, 2, 0, 6, 0],
              [2, 0, 3, 8, 5],
